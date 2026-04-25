@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>SubcultureCentral – Evento–Artista</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">SubcultureCentral</a>
+        <a class="btn btn-success" href="/addevento_artista">+ Add Event–Artist</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2 class="mb-4">Event–Artist Assignments</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-striped table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Evento</th>
+                        <th>Artista</th>
+                        <th>Slot Inicio</th>
+                        <th>Slot Fin</th>
+                        <th>Orden</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ea in evento_artista %}
+                    <tr>
+                        <td>{{ ea.id_evento_artista }}</td>
+                        <td>{{ ea.id_evento }}</td>
+                        <td>{{ ea.id_artista }}</td>
+                        <td>{{ ea.slot_inicio }}</td>
+                        <td>{{ ea.slot_fin }}</td>
+                        <td>{{ ea.orden }}</td>
+                        <td>
+                            <a class="btn btn-warning btn-sm" href="/updateevento_artista/{{ ea.id_evento_artista }}">Edit</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm"
+                               onclick="return confirm('¿Eliminar esta relacion evento–artista?')"
+                               href="/deleteevento_artista/{{ ea.id_evento_artista }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
