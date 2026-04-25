@@ -1,5 +1,5 @@
 # proyecto-base-de-datos
-# Subculture Planner  
+# SubcultureCentral  
 Gestor de eventos para subculturas musicales (rave, dubstep, rock alternativo, metal, indie, techno, etc.)
 
 Subculture Planner es una aplicación web CRUD desarrollada con **Python + Flask** y **MariaDB**, diseñada para gestionar eventos de música alternativa y underground.  
