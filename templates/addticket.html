@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ 'Edit Ticket' if ticket else 'Add Ticket' }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/ticket">SubcultureCentral</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="card shadow" style="max-width: 650px; margin: auto;">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">{{ 'Edit Ticket' if ticket else 'Add Ticket' }}</h4>
+        </div>
+
+        <div class="card-body">
+
+            <form action="" method="POST">
+
+                <div class="mb-3">
+                    <label class="form-label">Evento</label>
+                    <select class="form-select" name="id_evento">
+                        {% for e in eventos %}
+                        <option value="{{ e.id_evento }}"
+                            {% if ticket and ticket.id_evento == e.id_evento %}selected{% endif %}>
+                            {{ e.titulo }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tipo</label>
+                    <input type="text" class="form-control" name="tipo"
+                           value="{{ ticket.tipo if ticket }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Precio (€)</label>
+                    <input type="text" class="form-control" name="precio"
+                           value="{{ ticket.precio if ticket }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Estado</label>
+                    <select class="form-select" name="estado">
+                        <option value="vendido" {% if ticket and ticket.estado=='vendido' %}selected{% endif %}>Vendido</option>
+                        <option value="reservado" {% if ticket and ticket.estado=='reservado' %}selected{% endif %}>Reservado</option>
+                        <option value="cancelado" {% if ticket and ticket.estado=='cancelado' %}selected{% endif %}>Cancelado</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Codigo QR</label>
+                    <input type="text" class="form-control" name="codigo_qr"
+                           value="{{ ticket.codigo_qr if ticket }}">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/ticket" class="btn btn-secondary">Cancel</a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

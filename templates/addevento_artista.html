@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ 'Edit Event–Artist' if ea else 'Add Event–Artist' }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/evento_artista">SubcultureCentral</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="card shadow" style="max-width: 650px; margin: auto;">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">{{ 'Edit Event–Artist' if ea else 'Add Event–Artist' }}</h4>
+        </div>
+
+        <div class="card-body">
+
+            <form action="" method="POST">
+
+                <div class="mb-3">
+                    <label class="form-label">Evento</label>
+                    <select class="form-select" name="id_evento">
+                        {% for e in eventos %}
+                        <option value="{{ e.id_evento }}"
+                            {% if ea and ea.id_evento == e.id_evento %}selected{% endif %}>
+                            {{ e.titulo }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Artista</label>
+                    <select class="form-select" name="id_artista">
+                        {% for a in artistas %}
+                        <option value="{{ a.id_artista }}"
+                            {% if ea and ea.id_artista == a.id_artista %}selected{% endif %}>
+                            {{ a.nombre_artistico }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Slot Inicio</label>
+                    <input type="time" class="form-control" name="slot_inicio"
+                           value="{{ ea.slot_inicio if ea }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Slot Fin</label>
+                    <input type="time" class="form-control" name="slot_fin"
+                           value="{{ ea.slot_fin if ea }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Orden</label>
+                    <input type="number" class="form-control" name="orden"
+                           value="{{ ea.orden if ea }}">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/evento_artista" class="btn btn-secondary">Cancel</a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

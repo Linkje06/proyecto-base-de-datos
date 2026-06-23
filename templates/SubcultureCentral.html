@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>SubcultureCentral – Dashboard</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+    <style>
+
+        body {
+            background-color: #f4f5f7;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link {
+            color: #dcdcdc !important;
+            margin-right: 15px;
+        }
+
+        .nav-link:hover {
+            color: #ffffff !important;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #1f1f1f, #343a40);
+            color: white;
+            padding: 60px 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        /* TARJETAS */
+        .module-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            background: white;
+            transition: 0.25s ease;
+            height: 100%;
+        }
+
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .module-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #222;
+        }
+
+        .module-desc {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR SUPERIOR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/dashboard">SubcultureCentral</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="/artistas">Artistas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/evento">Eventos</a></li>
+                <li class="nav-item"><a class="nav-link" href="/merch">Merchandising</a></li>
+                <li class="nav-item"><a class="nav-link" href="/patrocinador">Patrocinadores</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ticket">Tickets</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ubicacion">Ubicaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="/solicitud_equipo_musica">Equipo Musical</a></li>
+                <li class="nav-item"><a class="nav-link" href="/evento_artista">Evento–Artista</a></li>
+                <li class="nav-item"><a class="nav-link" href="/evento_patrocinador">Evento–Patrocinador</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Panel de Administracion</h1>
+        <p>Gestiona artistas, eventos, ubicaciones, patrocinadores y todos los elementos del ecosistema SubcultureCentral desde un único lugar.</p>
+    </div>
+
+    <!-- SECCIoN DE MoDULOS -->
+    <h3 class="section-title">Modulos del Sistema</h3>
+
+    <div class="row g-4">
+
+        <!-- ARTISTAS -->
+        <div class="col-md-4">
+            <a href="/artistas" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Artistas</div>
+                    <div class="module-desc">Gestion de artistas, perfiles y datos asociados.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- EVENTOS -->
+        <div class="col-md-4">
+            <a href="/evento" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Eventos</div>
+                    <div class="module-desc">Programacion, horarios, estados y logistica.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- MERCH -->
+        <div class="col-md-4">
+            <a href="/merch" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Merchandising</div>
+                    <div class="module-desc">Inventario, productos y control de stock.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- PATROCINADORES -->
+        <div class="col-md-4">
+            <a href="/patrocinador" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Patrocinadores</div>
+                    <div class="module-desc">Empresas colaboradoras y aportaciones.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- TICKETS -->
+        <div class="col-md-4">
+            <a href="/ticket" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Tickets</div>
+                    <div class="module-desc">Gestion de entradas, precios y estados.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- UBICACIONES -->
+        <div class="col-md-4">
+            <a href="/ubicacion" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Ubicaciones</div>
+                    <div class="module-desc">Salas, direcciones y capacidades.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- EQUIPO MUSICAL -->
+        <div class="col-md-4">
+            <a href="/solicitud_equipo_musica" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Equipo Musical</div>
+                    <div class="module-desc">Solicitudes de material técnico.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- EVENTO–ARTISTA -->
+        <div class="col-md-4">
+            <a href="/evento_artista" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Evento – Artista</div>
+                    <div class="module-desc">Asignacion de artistas a eventos.</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- EVENTO–PATROCINADOR -->
+        <div class="col-md-4">
+            <a href="/evento_patrocinador" style="text-decoration:none; color:inherit;">
+                <div class="module-card">
+                    <div class="module-title">Evento – Patrocinador</div>
+                    <div class="module-desc">Aportes y colaboraciones.</div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
